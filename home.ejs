@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            <%=locals.title%>
+        </title>
+        <link rel="stylesheet"href="/css/home.css" type="text/css">
+    </head>
+    <body>
+        <h1 id="para-heading">My Contacts List</h1>
+        <div id="list">
+            <ul>
+               <%for(let i of contact_list){%>
+                 <li>
+                     <p id="para1"><%=i.name%></p>
+                     <p id="para2"><%=i.phone%></p>
+                     <p id="para3"><%=i.email%></p>
+                 </li>
+               <%}%>
+            </ul>
+        </div>
+        <div id="input">
+        <form action="/contact-list" method="POST">
+            <input type="text" name="name" placeholder="Enter name" required>
+            <input type="number" name="phone" placeholder="Enter phone" >
+            <input type="text" name="email" placeholder="Enter email" >
+            <button type="submit">Add Contact List</button>
+        </form>
+        </div>
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
